@@ -1,0 +1,113 @@
+<div class="container my-4">
+  <h2 class="mb-3 text-center">Contacto</h2>
+  <p class="text-center">¡Puedes comunicarte con nosotros a través de nuestras redes sociales!</p>
+  <div class="d-flex flex-wrap gap-4 justify-content-center align-items-center my-4">
+    <a href="https://www.facebook.com/instagram" target="_blank" rel="noopener" class="text-decoration-none text-primary text-center">
+      <i class="bi bi-facebook" style="font-size: 2.5rem;"></i>
+      <div>Facebook</div>
+    </a>
+    <a href="https://www.instagram.com/instagram" target="_blank" rel="noopener" class="text-decoration-none text-danger text-center">
+      <i class="bi bi-instagram" style="font-size: 2.5rem;"></i>
+      <div>Instagram</div>
+    </a>
+    <a href="https://wa.me/5491112345678" target="_blank" rel="noopener" class="text-decoration-none text-success text-center">
+      <i class="bi bi-whatsapp" style="font-size: 2.5rem;"></i>
+      <div>WhatsApp</div>
+    </a>
+    <a href="mailto:contacto@petshop.com" class="text-decoration-none text-secondary text-center">
+      <i class="bi bi-envelope" style="font-size: 2.5rem;"></i>
+      <div>Correo</div>
+    </a>
+  </div>
+  <p class="text-center">¡Te esperamos para ayudarte con lo que necesites!</p>
+  
+  <!-- Formulario de Contacto -->
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+          <h4 class="mb-0">Envíanos un mensaje</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="enviarMensaje()" #contactForm="ngForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre completo *</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="nombre" 
+                name="nombre"
+                [(ngModel)]="formData.nombre"
+                required
+                #nombre="ngModel">
+              <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger">
+                <small *ngIf="nombre.errors?.['required']">El nombre es requerido</small>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico *</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email"
+                [(ngModel)]="formData.email"
+                required
+                email
+                #email="ngModel">
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                <small *ngIf="email.errors?.['required']">El correo es requerido</small>
+                <small *ngIf="email.errors?.['email']">Ingrese un correo válido</small>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="asunto" class="form-label">Asunto *</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="asunto" 
+                name="asunto"
+                [(ngModel)]="formData.asunto"
+                required
+                #asunto="ngModel">
+              <div *ngIf="asunto.invalid && (asunto.dirty || asunto.touched)" class="text-danger">
+                <small *ngIf="asunto.errors?.['required']">El asunto es requerido</small>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje *</label>
+              <textarea 
+                class="form-control" 
+                id="mensaje" 
+                name="mensaje"
+                rows="5"
+                [(ngModel)]="formData.mensaje"
+                required
+                #mensaje="ngModel"></textarea>
+              <div *ngIf="mensaje.invalid && (mensaje.dirty || mensaje.touched)" class="text-danger">
+                <small *ngIf="mensaje.errors?.['required']">El mensaje es requerido</small>
+              </div>
+            </div>
+            
+            <div class="d-grid">
+              <button 
+                type="submit" 
+                class="btn btn-primary btn-lg"
+                [disabled]="contactForm.invalid || enviando">
+                <span *ngIf="!enviando">
+                  <i class="bi bi-send me-2"></i>Enviar mensaje
+                </span>
+                <span *ngIf="enviando">
+                  <i class="bi bi-hourglass-split me-2"></i>Enviando...
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

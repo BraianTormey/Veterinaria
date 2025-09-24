@@ -1,0 +1,31 @@
+<!-- Navbar Bootstrap mejorado -->
+<nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #f8fafc 70%, #e0f7fa 100%); border-bottom: 1.5px solid #e0e0e0;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+      <span class="fs-3">🐾</span>
+      <span class="fw-bold" style="letter-spacing: 1px;">PetShop</span>
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+        <li class="nav-item"><a class="nav-link" routerLink="/">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/acercade">Acerca de</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<main class="app-content">
+  <div class="container mb-5" style="background: #fafdff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); padding-top: 2rem; padding-bottom: 2rem; margin-top: 2rem;">
+    <router-outlet />
+  </div>
+</main>
+
+<!-- Footer Bootstrap -->
+<footer class="bg-light text-center text-muted py-3 border-top">
+  <div class="container">
+    <small>&copy; 2024 PetShop. Todos los derechos reservados.</small>
+  </div>
+</footer>
