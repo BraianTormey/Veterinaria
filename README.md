@@ -1,5 +1,4 @@
-Descripción del Proyecto:
-PetShop es una aplicación web completa para una tienda de mascotas que permite a los usuarios explorar productos, ver detalles específicos y contactar con la tienda. La aplicación está desarrollada con una arquitectura de frontend y backend separados.
+aplicación web completa para una tienda de mascotas que permite a los usuarios explorar productos, ver detalles específicos y contactar con la tienda. La aplicación está desarrollada con una arquitectura de frontend y backend separados.
 
 Tecnologías Utilizadas:
 Frontend
